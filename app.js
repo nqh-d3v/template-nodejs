@@ -13,6 +13,8 @@ const bodyParser = require('body-parser');
 
 const indexRouter = require('./src/api');
 
+require('dotenv').config();
+
 const app = express();
 
 // view engine setup
