@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Giao diện chung</title>
+    <% include ../partials/header %>
+  </head>
+  <body>
+    <div class="container-scroller">
+      <!-- partial:../../partials/_navbar.html -->
+      <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+          <a class="navbar-brand brand-logo" href="/"><img src="./assets/images/logo.svg" alt="logo" /></a>
+          <a class="navbar-brand brand-logo-mini" href="/"><img src="./assets/images/logo-mini.svg" alt="logo" /></a>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-stretch">
+          <% include ../partials/navbar-menu-wrapper %>
+        </div>
+      </nav>
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:../../partials/_sidebar.html -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+          <% include ../partials/sidebar %>
+        </nav>
+        <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper">
+          </div>
+          <footer class="footer">
+            <% include ../partials/footer %>
+          </footer>
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <% include ../partials/bottom %>
+    <script>
+      $(".js-example-responsive").select2({
+        placeholder: "Tìm gì đó..."
+      });
+    </script>
+    <% if (mess != '') { %>
+      <script>
+        toastr["info"]('<%- mess %>');
+      </script>    
+    <% } %>
+  </body>
+</html>
